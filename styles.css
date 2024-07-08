@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: hsl(0, 0%, 98%);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  padding: 5rem 2rem 4rem 2rem;
+  min-width: 320px;
+  max-width: 540px;
+}
+header h1 {
+  font-weight: 200;
+  color: hsl(234, 12%, 34%);
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+header h1 span {
+  font-weight: 600;
+}
+header p {
+  font-weight: 400;
+  color: hsl(229, 6%, 66%);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "supervisor-card" "team-builder-card" "karma-card" "calculator-card";
+  gap: 1.5rem;
+}
+main article {
+  width: 15rem;
+  height: auto;
+  background-color: white;
+  border-radius: 0.4rem;
+  box-shadow: 0rem 0.5rem 0.8rem hsla(214, 50%, 65%, 0.3);
+  padding: 1.5rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+}
+main article h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+  padding-bottom: 0.2rem;
+}
+main article p {
+  font-size: 0.77rem;
+  color: hsl(229, 6%, 66%);
+  line-height: 1.8;
+  padding-bottom: 1.8rem;
+}
+main article img {
+  width: 3.5rem;
+  height: auto;
+  align-self: end;
+  justify-self: end;
+}
+main article.supervisor-card {
+  border-top: 4px solid hsl(180, 62%, 55%);
+}
+main article.team-builder-card {
+  border-top: 4px solid hsl(0, 78%, 62%);
+}
+main article.karma-card {
+  border-top: 4px solid hsl(34, 97%, 64%);
+}
+main article.calculator-card {
+  border-top: 4px solid hsl(212, 86%, 64%);
+}
+
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: hsl(229, 6%, 66%);
+  padding: 5rem 1rem 1rem 1rem;
+  min-width: 320px;
+}
+footer .attribution a {
+  color: hsl(212, 86%, 64%);
+}
+
+@media (width > 1000px) {
+  body {
+    justify-content: center;
+    align-items: space-around;
+  }
+  header h1 {
+    font-size: 2.3rem;
+    line-height: 1.4;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: ". team-builder ." "supervisor team-builder calculator" "supervisor karma calculator" ". karma .";
+    gap: 2rem;
+  }
+  main .supervisor-card {
+    grid-area: supervisor;
+  }
+  main .team-builder-card {
+    grid-area: team-builder;
+  }
+  main .karma-card {
+    grid-area: karma;
+  }
+  main .calculator-card {
+    grid-area: calculator;
+  }
+  main article {
+    width: 19rem;
+    padding: 1.5rem 2rem 2rem 2rem;
+    justify-content: space-between;
+    line-height: 2;
+  }
+  main article h2 {
+    font-size: 1.3rem;
+  }
+  main article p {
+    font-size: 0.9rem;
+    padding-right: 1rem;
+    padding-bottom: 2.5rem;
+  }
+  main article img {
+    width: 4rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

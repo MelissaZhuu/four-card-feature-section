@@ -1,0 +1,201 @@
+// Primary colors
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+
+// Neutral colors
+$very-dark-blue: hsl(234, 12%, 34%);
+$grayish-blue: hsl(229, 6%, 66%);
+$very-light-gray: hsl(0, 0%, 98%);
+$light-blue: hsla(214, 50%, 65%, 0.3);
+
+// Font size & weights
+$body: 15px;
+
+$light: 200;
+$regular: 400;
+$bold: 600;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $very-light-gray;
+    font-family: 'Poppins', sans-serif;
+    font-size: $body;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 5rem 2rem 4rem 2rem;
+    min-width: 320px;
+    max-width: 540px;
+
+    h1 {
+        font-weight: $light;
+        color: $very-dark-blue;
+        font-size: 1.5rem;
+        span {
+            font-weight: $bold;
+        }
+        padding-bottom: 1rem;
+    }
+    
+    p {
+        font-weight: $regular;
+        color: $grayish-blue;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+        'supervisor-card' 
+        'team-builder-card' 
+        'karma-card' 
+        'calculator-card';
+    gap: 1.5rem;
+
+    article {
+        width: 15rem;
+        height: auto;
+        background-color: white;
+        border-radius: 0.4rem;
+        box-shadow: 0rem 0.5rem 0.8rem $light-blue;
+        padding: 1.5rem 1.7rem;
+
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: $bold;
+            color: $very-dark-blue;
+            padding-bottom: 0.2rem;
+        }
+        
+        p {
+            font-size: 0.77rem;
+            color: $grayish-blue;
+            line-height: 1.8;
+            padding-bottom: 1.8rem;
+        }
+
+        img {
+            width: 3.5rem;
+            height: auto;
+            align-self: end;
+            justify-self: end;
+        }
+
+        @mixin border-style($color) {
+            border-top: 4px solid $color;
+        }
+
+        &.supervisor-card {
+            @include border-style($cyan);
+        }
+
+        &.team-builder-card {
+            @include border-style($red);
+        }
+
+        &.karma-card {
+            @include border-style($orange);
+        }
+
+        &.calculator-card {
+            @include border-style($blue);
+        }
+    }
+}
+
+footer .attribution { 
+    font-size: 11px; 
+    text-align: center;
+    color: $grayish-blue;
+    padding: 5rem 1rem 1rem 1rem;
+    min-width: 320px;
+
+    a {
+        color: $blue;
+    }
+}
+
+
+@media (width > 1000px) {
+    body {
+        justify-content: center;
+        align-items: space-around;
+    }
+
+    header {
+        h1 {
+            font-size: 2.3rem;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    main {
+        .supervisor-card {
+            grid-area: supervisor;
+        }
+
+        .team-builder-card {
+            grid-area: team-builder;
+        }
+
+        .karma-card {
+            grid-area: karma;
+        }
+
+        .calculator-card {
+            grid-area: calculator;
+        }
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+            ". team-builder ."
+            "supervisor team-builder calculator"
+            "supervisor karma calculator"
+            ". karma .";
+        gap: 2rem;
+        
+        article {
+            width: 19rem;
+            padding: 1.5rem 2rem 2rem 2rem;
+            justify-content: space-between;
+            line-height: 2;
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                padding-right: 1rem;
+                padding-bottom: 2.5rem;
+            }
+
+            img {
+                width: 4rem;
+            }
+        }
+    }
+}
