@@ -125,16 +125,15 @@ footer .attribution a {
     grid-area: calculator;
   }
   main article {
-    width: 19rem;
+    width: 18rem;
     padding: 1.5rem 2rem 2rem 2rem;
     justify-content: space-between;
     line-height: 2;
   }
   main article h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   main article p {
-    font-size: 0.9rem;
     padding-right: 1rem;
     padding-bottom: 2.5rem;
   }
